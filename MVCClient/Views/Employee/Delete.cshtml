@@ -1,0 +1,35 @@
+﻿@model MVCClient.Model.Employee
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_MyLayout";
+}
+
+<h4>Delete Employee</h4>
+<hr />
+<div>
+    <div class="col-md-6">
+        <input type="hidden" name="Id" value="@Model.EmployeeID" />
+        <div class="form-group mb-2">
+            <label>Name</label>
+            <input type="text" class="form-control" name="Name" placeholder="Name" value="@Model.Name" required readonly>
+        </div>
+        <div class="form-group mb-2">
+            <label>Age</label>
+            <input type="text" class="form-control" name="Age" placeholder="Age" value="@Model.Age" required readonly>
+        </div>
+        <div class="form-group mb-4">
+            <label>Salary</label>
+            <input type="text" class="form-control" name="Salary" placeholder="Salary" value="@Model.Salary" required readonly>
+        </div>
+    </div>
+</div>
+
+<form asp-action="Delete">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="EmployeeID" />
+    <div class="form-group mt-2">
+        <input type="submit" value="Delete Employee" class="btn btn-success" />
+        <a asp-action="Index" class="btn btn-primary">Back to List</a>
+    </div>
+</form>

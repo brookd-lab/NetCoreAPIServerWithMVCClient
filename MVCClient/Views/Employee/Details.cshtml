@@ -1,0 +1,42 @@
+﻿@model MVCClient.Model.Employee
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_MyLayout";
+}
+
+<h4>Employee Details</h4>
+<hr />
+<div class="row">
+    <div class="col-md-10">
+        <input type="hidden" name="Id" value="@Model.EmployeeID" />
+        <div class="form-group mb-2">
+            <label>Name</label>
+            <input type="text" class="form-control" name="Name" placeholder="Name" value="@Model.Name" required readonly>
+        </div>
+        <div class="form-group mb-2">
+            <label>Age</label>
+            <input type="text" class="form-control" name="Age" placeholder="Age" value="@Model.Age" required readonly>
+        </div>
+        <div class="form-group mb-2">
+            <label>Salary</label>
+            <input type="text" class="form-control" name="Salary" placeholder="Salary" value="@Model.Salary" required readonly>
+        </div>
+        <br />
+        <div class="form-group mt-2">
+            <a asp-action="Edit" asp-route-id="@Model?.EmployeeID" class="btn btn-success">Update</a>
+            <a asp-action="Index" class="btn btn-primary">Back to List</a>
+        </div>
+    </div>
+</div>
+
+<div>
+
+</div>
+
+
+
+
+
+
+
+
